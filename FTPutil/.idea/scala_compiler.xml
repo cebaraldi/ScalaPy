@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="bsp 1" modules="FTPutil_f4dd477a3a">
+      <parameters>
+        <parameter value="-Yrangepos" />
+        <parameter value="-P:semanticdb:failures:warning" />
+        <parameter value="-P:semanticdb:synthetics:on" />
+        <parameter value="-P:semanticdb:sourceroot:/home/sprk/devel/jvm/scala/2/ScalaPy/FTPutil" />
+        <parameter value="-release" />
+        <parameter value="17" />
+        <parameter value="-Yimports:java.lang,scala,scala.Predef,me.shadaj.scalapy" />
+      </parameters>
+      <plugins>
+        <plugin path="$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scalameta/semanticdb-scalac_2.13.13/4.8.15/semanticdb-scalac_2.13.13-4.8.15.jar" />
+      </plugins>
+    </profile>
+  </component>
+</project>

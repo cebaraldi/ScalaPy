@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="BSP: jna-5.11.0" external-system-id="BSP">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.11.0/jna-5.11.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/net/java/dev/jna/jna/5.11.0/jna-5.11.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

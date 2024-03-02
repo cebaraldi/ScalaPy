@@ -39,11 +39,38 @@ object FTPUtil {
   def run(): Unit = {
     // Parameter input/output
     val json = ujson.read(pario())
-    println(s"user: ${json("user").str}")
-    println(s"pass: ${json("pass").str}")
-    println(s"server: ${json("server").str}")
-    println(s"local: ${json("local").str}")
-    println(s"remote: ${json("remote").str}")
 
+    // Global Scope
+    val list = py.Dynamic.global.range(1, 3 + 1)
+    val listSum = py.Dynamic.global.sum(list)
+    println(s"Global Scope: listSum = ${listSum}")
+
+    py.local { // python local scope
+      val user = json("user").str
+      val pass = json("pass").str
+      val server = json("server").str
+      val local = json("local").str
+      val remote = json("remote").str
+
+      val os = py.module("os")
+      os.chdir(local)
+      val ftp = py.module("ftputil")
+      py.`with`(ftp.FTPHost(server, user, pass)) { host =>
+        host.chdir(remote)
+        host.chdir("recent")
+        val files = host.listdir(host.curdir) // [11:22].toPythonCopy
+        // println(files)
+        //files.
+
+        val f = files.bracketAccess(11)
+        val d = host.download_if_newer(f, f)
+        println(s"... ${d.getClass}")
+
+        //if (d === "False") println("something")
+        println(s"downloaded ${f}")
+        println(d)
+
+      }
+    }
   }
 }
